@@ -14,14 +14,14 @@ session_start();
 <div class="register-container">
 
     <div class="left-side">
-        <img src="img/register.png" alt="Imagem de Registo">
+        <img src="../img/Imagem_RegistrarLogin.jpg" alt="Imagem de Registro">
     </div>
 
     <div class="right-side">
 
         <h1>Criar Conta</h1>
 
-        <form id="registerForm" method="POST" action="register_process_step1.php">
+        <form id="registerForm" method="POST" action="register_process_1.php">
 
             <label>Nome *</label>
             <input type="text" name="nome" id="nome" required>
@@ -42,6 +42,6 @@ session_start();
     </div>
 </div>
 
-<script src="register.js"></script>
+<script src="../js/register.js"></script>
 </body>
 </html>

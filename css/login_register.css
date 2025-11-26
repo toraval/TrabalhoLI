@@ -1,3 +1,6 @@
+/* ========================================= */
+/*               RESET GERAL                 */
+/* ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,86 +9,180 @@
 }
 
 body {
-    background: #f0f0f0;
+    background: #ececf3;
 }
 
+/* ========================================= */
+/*             CONTAINER PRINCIPAL           */
+/* ========================================= */
 .register-container {
-    display: flex;
-    width: 95%;
+    width: 100%;
     max-width: 1100px;
-    height: 600px;
-    background: white;
+    height: 650px;
     margin: 50px auto;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 0 18px rgba(0,0,0,0.2);
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* ========================================= */
+/*                 LADO ESQUERDO             */
+/* ========================================= */
 .left-side {
     width: 50%;
-    background: #111;
+    background: #0f0f12;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .left-side img {
-    width: 85%;
-    max-height: 90%;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
+/* ========================================= */
+/*                 LADO DIREITO              */
+/* ========================================= */
 .right-side {
     width: 50%;
-    padding: 50px;
+    padding: 55px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .right-side h1 {
-    margin-bottom: 30px;
-    font-size: 26px;
-    font-weight: 500;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #2e2e37;
 }
 
+/* ========================================= */
+/*            ESTILOS DO FORM                */
+/* ========================================= */
 form label {
-    font-size: 14px;
-    margin-top: 10px;
     display: block;
-}
-
-form input {
-    width: 100%;
-    padding: 12px 15px;
-    margin-top: 5px;
-    border: 1px solid #bbb;
-    border-radius: 6px;
+    margin-top: 18px;
+    margin-bottom: 6px;
     font-size: 15px;
+    font-weight: 600;
+    color: #4a4a54;
 }
 
+/* Inputs + Dropdown Base */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid #d5d5e0;
+    background: #f8f8fc;
+    font-size: 15px;
+    transition: 0.25s ease-in-out;
+    outline: none;
+}
+
+/* Foco */
+input[type="number"]:focus,
+select:focus {
+    border-color: #7b6dff;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(123, 109, 255, 0.4);
+}
+
+/* ========================================= */
+/*           DROPDOWN PERSONALIZADO          */
+/* ========================================= */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: 
+        linear-gradient(45deg, transparent 50%, #7b6dff 50%),
+        linear-gradient(135deg, #7b6dff 50%, transparent 50%);
+        
+    background-position: 
+        calc(100% - 18px) calc(50% + 4px),
+        calc(100% - 12px) calc(50% + 4px);
+
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+}
+
+/* Hover + animação suave */
+select:hover {
+    border-color: #7b6dff;
+    background-color: #ffffff;
+}
+
+/* Animação do dropdown abrir (suave) */
+select:focus {
+    animation: dropdownFocus 0.18s ease-out;
+}
+
+@keyframes dropdownFocus {
+    0% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ========================================= */
+/*                 BOTÃO SUBMIT              */
+/* ========================================= */
 button {
     width: 100%;
     margin-top: 30px;
     padding: 15px;
-    background: #222;
-    border: none;
+    font-size: 17px;
+    background: linear-gradient(135deg, #7b6dff, #5c4dfc);
     color: white;
+    border: none;
+    border-radius: 14px;
     cursor: pointer;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: 0.2s;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 14px rgba(123, 109, 255, 0.35);
 }
 
 button:hover {
-    background: #444;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(123, 109, 255, 0.45);
+    background: linear-gradient(135deg, #685aff, #4a3cf5);
 }
 
-/* Responsivo */
-@media(max-width: 850px) {
+/* ========================================= */
+/*                  RESPONSIVO               */
+/* ========================================= */
+@media (max-width: 900px) {
     .register-container {
         flex-direction: column;
         height: auto;
     }
 
-    .left-side, .right-side {
+    .left-side {
         width: 100%;
-        height: auto;
+        height: 250px;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 35px;
+    }
+
+    .left-side img {
+        height: 100%;
+        border-radius: 0;
     }
 }
