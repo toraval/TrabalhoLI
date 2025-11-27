@@ -643,3 +643,51 @@
 
             adviceDiv.innerHTML = advice.map(text => `<p style="margin-bottom: 10px;">${text}</p>`).join('');
         }
+
+function saveModalData() {
+  const map = [
+    ['modal-salary', 'salary'],
+    ['modal-rent', 'rent'],
+    ['modal-utilities', 'utilities'],
+    ['modal-internet', 'internet'],
+    ['modal-transport', 'transport'],
+    ['modal-insurance', 'insurance'],
+    ['modal-loans', 'loans'],
+    ['modal-food', 'food'],
+    ['modal-health', 'health'],
+    ['modal-education', 'education'],
+    ['modal-clothing', 'clothing'],
+    ['modal-entertainment', 'entertainment'],
+    ['modal-restaurants', 'restaurants'],
+    ['modal-hobbies', 'hobbies'],
+    ['modal-other', 'other'],
+  ];
+
+  // validação simples: exige salário e renda
+  const salary = document.getElementById('modal-salary').value;
+  const rent = document.getElementById('modal-rent').value;
+  if (!salary || !rent) {
+    alert('Preencha pelo menos o ordenado e a renda.');
+    return;
+  }
+
+  // copia os valores do modal para os campos principais
+  map.forEach(([from, to]) => {
+    const fromEl = document.getElementById(from);
+    const toEl = document.getElementById(to);
+    if (fromEl && toEl) {
+      toEl.value = fromEl.value;
+    }
+  });
+
+  // fecha o modal
+  const modal = document.getElementById('input-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+
+  // chama o cálculo
+  if (typeof calculateFinances === 'function') {
+    calculateFinances();
+  }
+}

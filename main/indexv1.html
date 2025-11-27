@@ -10,12 +10,103 @@
 
 </head>
 <body>
+   <body>
+  <!-- POP-UP OBRIGATÓRIO -->
+  <div id="input-modal" class="modal">
+    <div class="modal-content">
+      <h2>Informações Financeiras</h2>
+                
+      <div class="form-group">
+        <label for="modal-salary">Ordenado Mensal (€)</label>
+        <input type="number" id="modal-salary" placeholder="Ex: 1500" min="0" step="0.01">
+      </div>
+
+      <h3>Despesas Fixas Mensais</h3>
+      <div class="two-columns">
+        <div class="form-group">
+          <label for="modal-rent">Renda/Prestação Casa (€)</label>
+          <input type="number" id="modal-rent" placeholder="Ex: 500" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-utilities">Água, Luz, Gás (€)</label>
+          <input type="number" id="modal-utilities" placeholder="Ex: 80" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-internet">Internet/Telemóvel (€)</label>
+          <input type="number" id="modal-internet" placeholder="Ex: 40" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-transport">Transporte (€)</label>
+          <input type="number" id="modal-transport" placeholder="Ex: 60" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-insurance">Seguros (€)</label>
+          <input type="number" id="modal-insurance" placeholder="Ex: 30" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-loans">Empréstimos/Créditos (€)</label>
+          <input type="number" id="modal-loans" placeholder="Ex: 100" min="0" step="0.01">
+        </div>
+      </div>
+
+      <h3>Despesas Variáveis Mensais</h3>
+      <div class="two-columns">
+        <div class="form-group">
+          <label for="modal-food">Alimentação (€)</label>
+          <input type="number" id="modal-food" placeholder="Ex: 300" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-health">Saúde/Farmácia (€)</label>
+          <input type="number" id="modal-health" placeholder="Ex: 50" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-education">Educação (€)</label>
+          <input type="number" id="modal-education" placeholder="Ex: 0" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-clothing">Vestuário (€)</label>
+          <input type="number" id="modal-clothing" placeholder="Ex: 50" min="0" step="0.01">
+        </div>
+      </div>
+
+      <h3>Gastos Supérfluos/Lazer</h3>
+      <div class="two-columns">
+        <div class="form-group">
+          <label for="modal-entertainment">Entretenimento/Streaming (€)</label>
+          <input type="number" id="modal-entertainment" placeholder="Ex: 30" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-restaurants">Restaurantes/Cafés (€)</label>
+          <input type="number" id="modal-restaurants" placeholder="Ex: 100" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-hobbies">Hobbies (€)</label>
+          <input type="number" id="modal-hobbies" placeholder="Ex: 50" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="modal-other">Outros Gastos (€)</label>
+          <input type="number" id="modal-other" placeholder="Ex: 50" min="0" step="0.01">
+        </div>
+      </div>
+
+      <button class="btn" onclick="saveModalData()">Guardar e Continuar</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- aqui continua o teu HTML normal (tabs, etc.) -->
+
+  </div>
+
+  <div class="container">
+    <!-- resto do teu conteúdo atual -->
+
     <div class="container">
         <h1>💰 Gestor Financeiro Pessoal</h1>
         <p class="subtitle">Gerencie suas finanças de forma inteligente e alcance seus objetivos</p>
 
         <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('input')">📝 Dados Iniciais</button>
+            
             <button class="tab-btn" onclick="showTab('analysis')">📊 Análise</button>
             <button class="tab-btn" onclick="showTab('expenses')">💸 Despesas</button>
             <button class="tab-btn" onclick="showTab('goals')">🎯 Objetivos</button>

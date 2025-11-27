@@ -406,3 +406,27 @@
         .negative {
             color: var(--color-error);
         }
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* o modal em si */
+.modal-content {
+  background: #000000;
+  padding: 20px 24px;
+  border-radius: 8px;
+  max-width: 900px;       /* largura máxima */
+  width: 95%;             /* ocupa quase toda a largura em telas pequenas */
+  max-height: 90vh;       /* não passa de 90% da altura da janela */
+  overflow-y: auto;       /* se o conteúdo for maior, aparece scroll dentro do modal */
+}
+.modal.hidden {
+  display: none;
+}
+
