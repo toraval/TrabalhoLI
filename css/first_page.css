@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 55vh;
+    background: url('../img/finance_bg.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* MAIN BOX */
+.container {
+    text-align: center;
+    margin: -60px auto 0;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    animation: slideUp 0.8s ease forwards;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.subtitle {
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 14px 20px;
+    background: #4f46e5;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #3730a3;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #4f46e5;
+    color: #4f46e5;
+}
+
+.btn-outline:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

@@ -43,5 +43,5 @@ $_SESSION['email']      = $user['email'];
 $_SESSION['tipo_util']  = $user['tipo_util'];
 
 // Redireciona para página principal
-header("Location: ../indexv1.html");
+header("Location: ../main/indexv1.html");
 exit;
