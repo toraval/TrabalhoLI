@@ -46,5 +46,5 @@ $sql->execute();
 
 unset($_SESSION['user_id']);
 
-header("Location: ../indexv1.html");
+header("Location: ../login.php");
 exit;

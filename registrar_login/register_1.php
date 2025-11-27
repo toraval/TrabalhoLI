@@ -2,6 +2,18 @@
 session_start();
 ?>
 
+<?php if (isset($_GET['erro'])): ?>
+    <div class="alerta-erro">
+        <?php 
+            if ($_GET['erro'] == "email_existente") 
+                echo "⚠ O email inserido já está registado!";
+
+            if ($_GET['erro'] == "nome_existente") 
+                echo "⚠ O nome de utilizador já está em uso!";
+        ?>
+    </div>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>

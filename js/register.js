@@ -16,3 +16,14 @@ document.getElementById("registerForm").addEventListener("submit", function(e){
     }
 
 });
+
+setTimeout(() => {
+    const alerta = document.querySelector(".alerta-erro");
+    if (alerta) {
+        alerta.style.transition = "0.5s";
+        alerta.style.opacity = "0";
+        alerta.style.transform = "translateY(-10px)";
+    }
+}, 5000);
+
+

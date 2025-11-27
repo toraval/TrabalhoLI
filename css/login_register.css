@@ -88,6 +88,20 @@ select {
     outline: none;
 }
 
+input[type="text"], input[type="password"], input[type="email"],
+select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid #d5d5e0;
+    background: #f8f8fc;
+    font-size: 15px;
+    transition: 0.25s ease-in-out;
+    outline: none;
+}
+
+
+
 /* Foco */
 input[type="number"]:focus,
 select:focus {
@@ -184,5 +198,33 @@ button:hover {
     .left-side img {
         height: 100%;
         border-radius: 0;
+    }
+}
+
+/* ============================ */
+/*   ALERTAS DE ERRO ESTILIZADOS */
+/* ============================ */
+
+.alerta-erro {
+    background: #ffdddd;
+    border-left: 5px solid #ff4444;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    color: #a40000;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+
+    /* animação */
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: slideDownFade 0.4s ease forwards;
+}
+
+/* animação */
+@keyframes slideDownFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
