@@ -691,3 +691,17 @@ function saveModalData() {
     calculateFinances();
   }
 }
+
+// Quando tudo tiver carregado, mostra a página
+window.addEventListener('load', function () {
+  document.body.classList.remove('app-loading');
+});
+
+// para adicionar garantir que nao quer fechar a tela
+window.addEventListener('beforeunload', function (event) {
+  // Se quiser, aqui podias checar se há dados preenchidos.
+  // Para garantir o aviso sempre:
+  event.preventDefault();
+  event.returnValue = 'Os dados introduzidos serão perdidos se sair ou recarregar a página.';
+});
+
