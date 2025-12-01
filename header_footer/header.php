@@ -1,9 +1,21 @@
 <?php
+// Iniciar sessão se ainda não foi iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Incluir conexão com a base de dados
 require_once 'connect_db.php';
 
-// Verificar se o usuário está logado (simulação - você implementará o login completo depois)
-$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 1; // ID 1 para demonstração
+// Verificar se o usuário está logado
+if (!isset($_SESSION['user_id'])) {
+    // Redirecionar para página de login/landing
+    header('Location: indexv1.html');
+    exit();
+}
+
+// Usar o ID do usuário da sessão
+$user_id = $_SESSION['user_id'];
 
 // Buscar informações do usuário no banco de dados
 $sql_user = "SELECT id, nome, email, ocupacao, salario FROM utilizadores WHERE id = ?";
@@ -37,15 +49,10 @@ if ($result_user->num_rows > 0) {
     $percentual_orcamento = min(100, max(0, $percentual_orcamento));
     
 } else {
-    // Dados padrão caso não encontre o usuário
-    $user = [
-        'nome' => 'Convidado',
-        'email' => 'convidado@exemplo.com',
-        'ocupacao' => 'Visitante',
-        'salario' => 0
-    ];
-    $saldo_disponivel = 0;
-    $percentual_orcamento = 0;
+    // Usuário não encontrado na base de dados - fazer logout
+    session_destroy();
+    header('Location: indexv1.html');
+    exit();
 }
 
 $stmt_user->close();

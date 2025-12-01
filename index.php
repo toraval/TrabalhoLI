@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: main/indexv1.html');
+    exit();
+}
 // Incluir o header
 require_once 'header_footer/header.php';
 ?>

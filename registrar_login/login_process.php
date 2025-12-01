@@ -3,23 +3,23 @@ session_start();
 require_once("../connect_db.php");
 
 // Verifica se os campos foram enviados
-if (!isset($_POST['nome'], $_POST['email'], $_POST['password'])) {
+if (!isset($_POST['email'], $_POST['password'])) { // Removi 'nome' aqui
     header("Location: login.php?erro=CamposEmFalta");
     exit;
 }
 
-$nome     = trim($_POST['nome']);
-$email    = trim($_POST['email']);
+// Ajuste conforme seu formulário de login
+$email = trim($_POST['email']);
 $password = $_POST['password'];
 
-// Consulta o utilizador
+// Consulta o utilizador (ajustado para usar apenas email)
 $sql = $conn->prepare("
-    SELECT id, nome, email, password, tipo_util 
+    SELECT id, nome, email, password, tipo_util, ocupacao, salario
     FROM utilizadores 
-    WHERE nome = ? AND email = ?
+    WHERE email = ?
 ");
 
-$sql->bind_param("ss", $nome, $email);
+$sql->bind_param("s", $email);
 $sql->execute();
 $result = $sql->get_result();
 
@@ -41,7 +41,10 @@ $_SESSION['user_id']    = $user['id'];
 $_SESSION['nome']       = $user['nome'];
 $_SESSION['email']      = $user['email'];
 $_SESSION['tipo_util']  = $user['tipo_util'];
+$_SESSION['ocupacao']   = $user['ocupacao'];
+$_SESSION['salario']    = $user['salario'];
 
 // Redireciona para página principal
 header("Location: ../index.php");
 exit;
+?>
