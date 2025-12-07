@@ -4,82 +4,150 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finanças Pro | Gestão Financeira Simplificada</title>
-    <link rel="stylesheet" href="../css/first_page.css" />
+    <link rel="stylesheet" href="../css/first_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">$</div>
+            <span>Finanças Pro</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
 
-    <header class="hero">
-        <div class="overlay"></div>
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div class="hero-content">
-            <div class="logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20C40 8.954 31.046 0 20 0Z" fill="#4F46E5"/>
-                    <path d="M26.5 15.5H13.5C12.9477 15.5 12.5 15.9477 12.5 16.5V23.5C12.5 24.0523 12.9477 24.5 13.5 24.5H26.5C27.0523 24.5 27.5 24.0523 27.5 23.5V16.5C27.5 15.9477 27.0523 15.5 26.5 15.5Z" fill="white"/>
-                    <path d="M17 18.5H15V21.5H17V18.5Z" fill="#4F46E5"/>
-                    <path d="M21 18.5H19V21.5H21V18.5Z" fill="#4F46E5"/>
-                    <path d="M25 18.5H23V21.5H25V18.5Z" fill="#4F46E5"/>
-                </svg>
-                <span>Finanças Pro</span>
-            </div>
             <h1 class="hero-title">Controle Total das Suas Finanças</h1>
-            <p class="hero-subtitle">Organize, acompanhe e planeje seu futuro financeiro com nossa plataforma intuitiva</p>
-            <div class="hero-features">
-                <div class="feature">
-                    <span class="feature-icon">📊</span>
-                    <span>Relatórios Detalhados</span>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">💰</span>
-                    <span>Economia Inteligente</span>
-                </div>
-                <div class="feature">
-                    <span class="feature-icon">📈</span>
-                    <span>Planejamento Futuro</span>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Saiba mais</span>
-            <div class="arrow"></div>
-        </div>
-    </header>
-
-    <section class="container">
-        <div class="card">
-            <h2 class="title">Comece sua Jornada Financeira</h2>
-            <p class="subtitle">Junte-se a milhares de usuários que já transformaram sua relação com o dinheiro</p>
-
-            <div class="buttons">
-                <a href="../registrar_login/login.php" class="btn">
-                    <span class="btn-icon">→</span>
+            <p class="hero-subtitle">Organize, acompanhe e planeje seu futuro financeiro com nossa plataforma intuitiva e segura</p>
+            
+            <div class="cta-buttons">
+                <a href="../registrar_login/login.php" class="btn-primary">
+                    <span>→</span>
                     <span>Fazer Login</span>
                 </a>
-                <a href="../registrar_login/register_1.php" class="btn btn-outline">
-                    <span class="btn-icon">+</span>
-                    <span>Criar Conta</span>
+                <a href="../registrar_login/register_1.php" class="btn-secondary">
+                    <span>+</span>
+                    <span>Criar Conta Grátis</span>
                 </a>
             </div>
-            
-            <div class="benefits">
-                <div class="benefit">
-                    <span class="benefit-icon">🔒</span>
-                    <span>Segurança de Dados</span>
+
+            <div class="hero-features">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-text">Relatórios Detalhados</div>
                 </div>
-                <div class="benefit">
-                    <span class="benefit-icon">📱</span>
-                    <span>Acesso Multiplataforma</span>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">Economia Inteligente</div>
                 </div>
-                <div class="benefit">
-                    <span class="benefit-icon">🆓</span>
-                    <span>Plano Gratuito Incluído</span>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-text">Planejamento Futuro</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="../js/first_page.js"></script>
+    <!-- BENEFITS SECTION -->
+    <section class="benefits-section" id="beneficios">
+        <h2 class="section-title">Por Que Escolher Finanças Pro?</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon-large">🔒</div>
+                <h3 class="benefit-title">Segurança de Dados</h3>
+                <p class="benefit-description">Seus dados financeiros são protegidos com criptografia de nível bancário</p>
+            </div>
+
+            <div class="benefit-item turquoise">
+                <div class="benefit-icon-large">📱</div>
+                <h3 class="benefit-title">Multiplataforma</h3>
+                <p class="benefit-description">Acesse sua conta em qualquer dispositivo, a qualquer hora, em qualquer lugar</p>
+            </div>
+
+            <div class="benefit-item celeste">
+                <div class="benefit-icon-large">🆓</div>
+                <h3 class="benefit-title">Plano Gratuito</h3>
+                <p class="benefit-description">Comece totalmente grátis, sem necessidade de cartão de crédito</p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon-large">⚡</div>
+                <h3 class="benefit-title">Rápido e Intuitivo</h3>
+                <p class="benefit-description">Interface simples e direta, perfeita para todos os níveis de experiência</p>
+            </div>
+
+            <div class="benefit-item turquoise">
+                <div class="benefit-icon-large">📊</div>
+                <h3 class="benefit-title">Análises Avançadas</h3>
+                <p class="benefit-description">Visualize tendências e tome decisões financeiras com confiança</p>
+            </div>
+
+            <div class="benefit-item celeste">
+                <div class="benefit-icon-large">🤝</div>
+                <h3 class="benefit-title">Suporte 24/7</h3>
+                <p class="benefit-description">Equipe dedicada pronta para ajudar com qualquer dúvida ou problema</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="contato">
+        <h2 class="cta-title">Comece Sua Jornada Financeira Hoje</h2>
+        <p class="cta-subtitle">Junte-se a milhares de usuários que já transformaram sua relação com o dinheiro</p>
+        
+        <div class="cta-buttons">
+            <a href="../registrar_login/register_1.php" class="btn-primary">
+                <span>+</span>
+                <span>Criar Conta Grátis</span>
+            </a>
+            <a href="../registrar_login/login.php" class="btn-secondary">
+                <span>→</span>
+                <span>Já Tenho Conta</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Finanças Pro. Todos os direitos reservados. Gestão financeira simplificada.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Efeito de scroll na navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 5px 20px rgba(10, 126, 164, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 20px rgba(10, 126, 164, 0.05)';
+            }
+        });
+    </script>
 </body>
 </html>

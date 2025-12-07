@@ -77,4 +77,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Atualizar a cada 60 segundos (opcional)
     // setInterval(updateBalancePeriodically, 60000);
+    
+});
+// Toggle do Dropdown do Usuário
+document.getElementById('profileDropdown').addEventListener('click', function(e) {
+    e.stopPropagation();
+    const dropdown = document.getElementById('userDropdown');
+    dropdown.classList.toggle('active');
+});
+
+// Fechar dropdown ao clicar fora
+document.addEventListener('click', function(e) {
+    const userProfile = document.getElementById('userProfile');
+    const dropdown = document.getElementById('userDropdown');
+    
+    if (!userProfile.contains(e.target)) {
+        dropdown.classList.remove('active');
+    }
+});
+
+// Fechar ao clicar em um item
+document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function() {
+        document.getElementById('userDropdown').classList.remove('active');
+    });
 });

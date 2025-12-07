@@ -4,8 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: main/indexv1.html');
     exit();
 }
-// Incluir o header
-require_once 'header_footer/header.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -68,5 +67,6 @@ require_once 'header_footer/header.php';
     </main>
 
     <script src="js/header_footer.js"></script>
+    <script src="../js/Responsive_Scale.js"></script>
 </body>
 </html>
