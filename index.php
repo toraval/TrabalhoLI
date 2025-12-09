@@ -67,6 +67,6 @@ if (!isset($_SESSION['user_id'])) {
     </main>
 
     <script src="js/header_footer.js"></script>
-    <script src="../js/Responsive_Scale.js"></script>
+    <script src="js/Responsive_Scale.js"></script>
 </body>
 </html>
