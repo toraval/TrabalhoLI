@@ -153,16 +153,7 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
-                    <a href="perfil.php" class="dropdown-item">
-                        <i class="fas fa-user"></i> Meu Perfil
-                    </a>
-                    <a href="configuracoes.php" class="dropdown-item">
-                        <i class="fas fa-cog"></i> Configurações
-                    </a>
-                    <a href="ajuda.php" class="dropdown-item">
-                        <i class="fas fa-question-circle"></i> Ajuda
-                    </a>
-                    <div class="dropdown-divider"></div>
+                    
                     <a href="logout.php" class="dropdown-item logout">
                         <i class="fas fa-sign-out-alt"></i> Sair
                     </a>

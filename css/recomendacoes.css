@@ -1,0 +1,485 @@
+/* recomendacoes.css - Estilos específicos para a página de recomendações */
+
+.page-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.page-header h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.page-subtitle {
+    color: #718096;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Resumo rápido */
+.quick-summary {
+    margin: 30px 0;
+}
+
+.summary-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #805ad5;
+}
+
+.summary-card h3 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summary-item .label {
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.summary-item .value {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #805ad5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.progress {
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #805ad5, #6b46c1);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Recomendações geradas */
+.recommendations-section {
+    margin: 40px 0;
+}
+
+.section-header {
+    margin-bottom: 25px;
+}
+
+.section-header h3 {
+    color: #2d3748;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    color: #718096;
+    font-size: 1rem;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.recommendation-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border-top: 4px solid #805ad5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.recommendation-card.alerta {
+    border-top-color: #e53e3e;
+}
+
+.recommendation-card.aviso {
+    border-top-color: #d69e2e;
+}
+
+.recommendation-card.sucesso {
+    border-top-color: #38a169;
+}
+
+.recommendation-card.dica {
+    border-top-color: #4299e1;
+}
+
+.recommendation-card.oportunidade {
+    border-top-color: #805ad5;
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.recommendation-icon {
+    width: 40px;
+    height: 40px;
+    background: #f0f4ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #805ad5;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.recommendation-card.alerta .recommendation-icon {
+    background: #fed7d7;
+    color: #e53e3e;
+}
+
+.recommendation-card.aviso .recommendation-icon {
+    background: #feebc8;
+    color: #d69e2e;
+}
+
+.recommendation-card.sucesso .recommendation-icon {
+    background: #c6f6d5;
+    color: #38a169;
+}
+
+.recommendation-card.dica .recommendation-icon {
+    background: #bee3f8;
+    color: #4299e1;
+}
+
+.card-header h4 {
+    flex: 1;
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.recommendation-number {
+    background: #f7fafc;
+    color: #718096;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.card-body p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.recommendation-type {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: #f7fafc;
+    color: #718096;
+}
+
+.recommendation-date {
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+/* Sem recomendações */
+.no-recommendations {
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+}
+
+.empty-icon {
+    color: #cbd5e0;
+    margin-bottom: 20px;
+}
+
+.no-recommendations h4 {
+    color: #4a5568;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.no-recommendations p {
+    color: #718096;
+    margin-bottom: 25px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.empty-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: #805ad5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #6b46c1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 70, 193, 0.3);
+}
+
+.btn-secondary {
+    background: #4299e1;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+/* Recomendações salvas */
+.saved-recommendations {
+    margin: 40px 0;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.saved-recommendation {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 20px;
+    border-left: 4px solid #805ad5;
+}
+
+.saved-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.saved-header h4 {
+    color: #2d3748;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.saved-date {
+    color: #718096;
+    font-size: 0.85rem;
+}
+
+.saved-body p {
+    color: #4a5568;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.no-saved {
+    text-align: center;
+    padding: 30px;
+    color: #a0aec0;
+}
+
+.no-saved i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Dicas gerais */
+.general-tips {
+    margin: 40px 0;
+}
+
+.general-tips h3 {
+    color: #2d3748;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tip-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.tip-icon {
+    width: 50px;
+    height: 50px;
+    background: #f0f4ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #805ad5;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.tip-content h4 {
+    color: #2d3748;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tip-content p {
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .summary-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .empty-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 20px 0;
+    }
+    
+    .summary-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-card,
+    .saved-recommendations {
+        padding: 20px;
+    }
+    
+    .card-header {
+        flex-wrap: wrap;
+    }
+    
+    .recommendation-number {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
