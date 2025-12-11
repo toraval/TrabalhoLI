@@ -95,7 +95,7 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="orcamento.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'orcamento.php') ? 'active' : ''; ?>">
+                    <a href="orcamentos.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'orcamentos.php') ? 'active' : ''; ?>">
                         <i class="fas fa-chart-pie"></i>
                         <span>Orçamento</span>
                     </a>
