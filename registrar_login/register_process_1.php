@@ -4,9 +4,16 @@ require_once("../connect_db.php");
 
 $nome  = trim($_POST['nome']);
 $email = trim($_POST['email']);
-$pass  = trim($_POST['pass']);
+$password = $_POST['password'] ?? '';
+$password_confirm = $_POST['password_confirm'] ?? '';
 
-$hash = password_hash($pass, PASSWORD_DEFAULT);
+if ($password !== $password_confirm) {
+  header("Location: register_1.php?erro=password_mismatch");
+  exit;
+}
+
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
 $tipo = 1;
 
 

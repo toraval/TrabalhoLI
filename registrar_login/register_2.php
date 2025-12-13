@@ -1,66 +1,69 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: register_1.php");
-    exit;
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <title>Register - Passo 2</title>
-    <link rel="stylesheet" href="../css/login_register.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completar Perfil</title>
+
+  <!-- IMPORTANTE: usar os mesmos CSS do visual novo -->
+  <link rel="stylesheet" href="../css/login.css?v=1">
+  <link rel="stylesheet" href="../css/register.css?v=1">
 </head>
-<body>
 
-<div class="register-container">
+<body class="login-page">
+  <main class="login-wrap">
+    <section class="login-card" aria-label="Registo - Passo 2">
+      <h1 class="login-title">Completar Perfil</h1>
 
-    <div class="left-side">
-        <img src="../img/Imagem_RegistrarLogin.jpg" alt="Imagem Registro">
-    </div>
+      <div class="login-layout">
+        <aside class="login-side" aria-hidden="true">
+          <div class="login-avatar"></div>
+          <div class="login-lock"></div>
+        </aside>
 
-    <div class="right-side">
+        <form method="POST" action="register_process_2.php" class="login-form" autocomplete="on">
+          <div class="auth-step">Passo 2 de 2</div>
 
-        <h1>Completar Perfil</h1>
+          <div class="field field--number">
+            <input type="number" name="idade" placeholder="Idade" required min="0" inputmode="numeric">
+          </div>
 
-        <form id="step2Form" method="POST" action="register_process_2.php">
-
-            <label>Idade *</label>
-            <input type="number" name="idade" required min="10" max="100">
-
-            <label>Ocupação *</label>
-            <select name="ocupacao" required>
-                <option value="">Selecionar...</option>
-                <option value="Estudante">Estudante</option>
-                <option value="Trabalhador">Trabalhador</option>
-                <option value="Ambos">Estudante / Trabalhador</option>
-                <option value="Outro">Outro</option>
+          <div class="field field--select">
+            <select name="ocupacao" required aria-label="Ocupação">
+              <option value="" selected disabled>Ocupação</option>
+              <option value="Estudante">Estudante</option>
+              <option value="Trabalhador">Trabalhador</option>
+              <option value="Estudante / Trabalhador">Estudante / Trabalhador</option>
+              <option value="Outro">Outro</option>
             </select>
+          </div>
 
-            <label>Salário Mensal (€) *</label>
-            <input type="number" name="salario" required min="0" step="0.01">
+          <div class="field field--money">
+            <input type="number" name="salario" placeholder="Salário Mensal (€)" required min="0" step="0.01" inputmode="decimal">
+          </div>
 
-            <label>Estilo de Vida *</label>
-            <select name="estilo_vida" required>
-                <option value="">Selecionar...</option>
-                <option value="Académico">Académico</option>
-                <option value="Trabalhador Ocupado">Trabalhador Ocupado</option>
-                <option value="Social Ativo">Social Ativo</option>
-                <option value="Minimalista">Minimalista</option>
-                <option value="Outro">Outro</option>
+          <div class="field field--select">
+            <select name="estilo_vida" required aria-label="Estilo de Vida">
+              <option value="" selected disabled>Estilo de Vida</option>
+              <option value="Académico">Académico</option>
+              <option value="Trabalhador Ocupado">Trabalhador Ocupado</option>
+              <option value="Social Ativo">Social Ativo</option>
+              <option value="Minimalista">Minimalista</option>
+              <option value="Outro">Outro</option>
             </select>
-            <button type="submit">Finalizar Registo</button>
+          </div>
 
+          <button type="submit" class="btn-login">Finalizar Registo</button>
+
+          <p class="login-footer">
+            Voltar ao <a href="register_1.php">Passo 1</a>
+          </p>
         </form>
-
-    </div>
-
-</div>
-
-<script src="../js/register_2.js"></script>
-
+      </div>
+    </section>
+  </main>
 </body>
 </html>
