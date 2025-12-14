@@ -224,174 +224,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['acao']) && $_POST['aca
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
-    <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .page-header {
-            margin-bottom: 30px;
-        }
-
-        .page-header h2 {
-            color: #333;
-            margin: 0;
-        }
-
-        .page-subtitle {
-            color: #666;
-            margin-top: 5px;
-        }
-
-        .alert {
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .upload-section {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .upload-area {
-            border: 2px dashed #3498db;
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .upload-area:hover {
-            background: #ecf0f1;
-            border-color: #2980b9;
-        }
-
-        .upload-area i {
-            font-size: 48px;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-
-        .upload-area p {
-            margin: 10px 0;
-            color: #666;
-        }
-
-        .upload-area .btn {
-            margin-top: 15px;
-        }
-
-        .preview-section {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .preview-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        .preview-table thead {
-            background: #f8f9fa;
-        }
-
-        .preview-table th,
-        .preview-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .preview-table th {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .preview-table select {
-            padding: 6px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: #3498db;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #2980b9;
-        }
-
-        .btn-secondary {
-            background: #95a5a6;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #7f8c8d;
-        }
-
-        .info-box {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-
-        .info-box h4 {
-            margin: 0 0 10px 0;
-            color: #1976d2;
-        }
-
-        .info-box p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="css/importar_extrato.css">
 </head>
 
 <body>
@@ -490,88 +323,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['acao']) && $_POST['aca
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
-                    </table>
+                        <div class="form-actions" style="margin-top: 25px;">
+                            <button type="button" class="btn btn-primary" id="btnImportar">
+                                <i class="fas fa-check"></i> Importar Despesas
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="btnCancelar">
+                                <i class="fas fa-redo"></i> Cancelar
+                            </button>
+                        </div>
 
-                    <div class="form-actions" style="margin-top: 25px;">
-                        <button type="button" class="btn btn-primary" onclick="prepararEEnviarImportacao()">
-                        <i class="fas fa-check"></i> Importar Despesas
-                        </button>
-                        <button type="button" class="btn btn-secondary" id="btnCancelar">
-                        <i class="fas fa-redo"></i> Cancelar
-                        </button>  
-                    </div>
+                    </table>
                 </form>
             </div>
         <?php endif; ?>
     </div>
-
-    <script>
-        // DRAG & DROP
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('fileInput');
-
-        uploadArea.addEventListener('click', () => fileInput.click());
-
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.style.background = '#e3f2fd';
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.style.background = '';
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            fileInput.files = e.dataTransfer.files;
-            document.getElementById('formUpload').submit();
-        });
-
-        // PREPARAR DADOS PARA IMPORTAÇÃO
-        function prepararImportacao() {
-            const dados = [];
-            const tabela = document.getElementById('tabelaPreview');
-
-            if (!tabela) return;
-
-            const linhas = tabela.querySelectorAll('tr');
-
-            linhas.forEach((linha) => {
-                const cells = linha.querySelectorAll('td');
-                if (cells.length > 0) {
-                    const select = linha.querySelector('.categoria-select');
-
-                    dados.push({
-                        data: cells[0].textContent.trim(),
-                        descricao: cells[1].textContent.trim(),
-                        valor: parseFloat(cells[2].textContent.replace(/\./g, '').replace(',', '.')),
-                        categoria: select ? select.value : cells[3].textContent.trim(),
-                        tipo: 'Saída'
-                    });
-                }
-            });
-
-            document.getElementById('dadosJson').value = JSON.stringify(dados);
-        }
-        document.getElementById('btnCancelar')?.addEventListener('click', () => {
-        // Recarrega a página do zero, sem POST
-        window.location.href = 'importar_extrato.php';
-        });
-        //Adiciona automaticamente o submit ao selecionar o ficheiro
-        fileInput.addEventListener('change', () => {
-        if (fileInput.files && fileInput.files.length > 0) {
-        document.getElementById('formUpload').submit();
-        }
-        });
-
-        function prepararEEnviarImportacao() {
-        prepararImportacao(); // enche o hidden com JSON
-        document.getElementById('formImportar').submit(); // envia o POST com acao=importar
-        }
-
-    </script>
-
-    <script src="header_footer.js"></script>
+    <script src="js/importar_extrato.js"></script>
+    <script src="js/header_footer.js"></script>
+    <?php require_once __DIR__ . '/header_footer/footer.php'; ?>
 </body>
 
 </html>

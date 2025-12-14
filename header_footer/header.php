@@ -159,6 +159,10 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
                         <i class="fas fa-chart-line"></i> Status
                     </a>
 
+                    <a href="importar_extrato.php" class="dropdown-item importar">
+                        <i class="fas fa-file-import"></i> Importar Extrato
+                    </a>
+
                     <div class="dropdown-divider"></div>
                     
                     <a href="logout.php" class="dropdown-item logout">
