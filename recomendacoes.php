@@ -58,13 +58,22 @@ while ($orcamento = $orcamentos_result->fetch_assoc()) {
 
 // Calcular percentual do orçamento
 $percentual_orcamento = ($user['salario'] > 0) ? ($total_despesas / $user['salario']) * 100 : 0;
+
+// Saldo disponível (usado para recomendação de poupança)
 $saldo_disponivel = $user['salario'] - $total_despesas;
 
 // Gerar recomendações personalizadas
-$recomendacoes_geradas = gerarRecomendacoes($user, $total_despesas, $categorias_despesas, $orcamentos, $percentual_orcamento);
+$recomendacoes_geradas = gerarRecomendacoes(
+    $user,
+    $total_despesas,
+    $categorias_despesas,
+    $orcamentos,
+    $percentual_orcamento,
+    $saldo_disponivel
+);
 
 // Função para gerar recomendações
-function gerarRecomendacoes($user, $total_despesas, $categorias_despesas, $orcamentos, $percentual_orcamento) {
+function gerarRecomendacoes($user, $total_despesas, $categorias_despesas, $orcamentos, $percentual_orcamento, $saldo_disponivel) {
     $recomendacoes = [];
     
     // Recomendação baseada no salário
@@ -112,7 +121,7 @@ function gerarRecomendacoes($user, $total_despesas, $categorias_despesas, $orcam
     }
     
     // Recomendação baseada na idade e ocupação
-    if ($user['idade'] < 25 && $user['ocupacao'] == 'Estudante') {
+    if (!empty($user['idade']) && !empty($user['ocupacao']) && $user['idade'] < 25 && $user['ocupacao'] == 'Estudante') {
         $recomendacoes[] = [
             'titulo' => 'Dica para Estudantes',
             'mensagem' => 'Como estudante, considere aproveitar descontos estudantis e controlar gastos com entretenimento.',
@@ -205,7 +214,7 @@ function gerarRecomendacoes($user, $total_despesas, $categorias_despesas, $orcam
                 <?php if (count($recomendacoes_geradas) > 0): ?>
                     <div class="recommendations-grid">
                         <?php foreach ($recomendacoes_geradas as $index => $recomendacao): ?>
-                            <div class="recommendation-card <?php echo $recomendacao['tipo']; ?>">
+                            <div class="recommendation-card <?php echo $recomendacao['tipo']; ?>" data-rec-id="<?php echo $index; ?>">
                                 <div class="card-header">
                                     <div class="recommendation-icon">
                                         <i class="fas fa-<?php echo $recomendacao['icon']; ?>"></i>
