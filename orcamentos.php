@@ -160,6 +160,7 @@ $orcamento_disponivel = $total_orcamentado - $total_gasto;
     <title>Orçamentos - FinanceControl</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/orcamentos.css">
 </head>

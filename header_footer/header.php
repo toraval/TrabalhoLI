@@ -65,7 +65,9 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
         <!-- Logo e Nome do Site -->
         <div class="logo-section">
             <div class="logo">
-                <i class="fas fa-chart-line"></i>
+                <!--<i class="fas fa-chart-line"></i>-->
+                <img src="img/logo.png" alt="FinanceManager Logo" class="logo-img">
+
                 <div class="logo-text">
                     <h1>Finance<span>Manager</span></h1>
                     <p class="tagline">Gestão financeira pessoal</p>

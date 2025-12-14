@@ -109,6 +109,7 @@ $percent_variavel = $total_fixa_variavel > 0 ? ($despesas_variaveis / $total_fix
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de Finanças - Status & Relatórios</title>
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/status.css">

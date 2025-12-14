@@ -7,8 +7,7 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Completar Perfil</title>
-
-  <!-- IMPORTANTE: usar os mesmos CSS do visual novo -->
+  <link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico">
   <link rel="stylesheet" href="../css/login.css?v=1">
   <link rel="stylesheet" href="../css/register.css?v=1">
 </head>

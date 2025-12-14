@@ -135,6 +135,32 @@ body {
     margin-top: 2px;
 }
 
+.logo-img {
+    width: 40px;
+    height: auto;
+    max-height: 40px;         
+    object-fit: contain;   
+    display: block;        
+}
+
+.logo-img:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 /* Navigation */
 .main-nav {
     flex: 1;

@@ -160,6 +160,7 @@ function gerarRecomendacoes($user, $total_despesas, $categorias_despesas, $orcam
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de Finanças - Recomendações</title>
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/recomendacoes.css">
