@@ -67,7 +67,7 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
             <div class="logo">
                 <i class="fas fa-chart-line"></i>
                 <div class="logo-text">
-                    <h1>Finanças<span>Inteligentes</span></h1>
+                    <h1>Finance<span>Manager</span></h1>
                     <p class="tagline">Gestão financeira pessoal</p>
                 </div>
             </div>
