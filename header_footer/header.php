@@ -152,6 +152,11 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
                             <p id="dropdownUserEmail"><?php echo htmlspecialchars($user['email']); ?></p>
                         </div>
                     </div>
+
+                    <a href="status.php" class="dropdown-item status">
+                        <i class="fas fa-chart-line"></i> Status
+                    </a>
+
                     <div class="dropdown-divider"></div>
                     
                     <a href="logout.php" class="dropdown-item logout">
