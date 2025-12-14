@@ -404,8 +404,6 @@ $percent_variavel = $total_fixa_variavel > 0 ? ($despesas_variaveis / $total_fix
                     </div>
                 </div>
             </div>
-
-           
         </div>
     </main>
 
