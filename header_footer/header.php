@@ -40,11 +40,24 @@ if ($result_user->num_rows > 0) {
         $total_despesas = $row_despesas['total_despesas'] ?: 0;
     }
     
-    // Calcular saldo disponível
-    $salario = $user['salario'] ?: 0;
-    $saldo_disponivel = $salario - $total_despesas;
+    // Buscar receitas do usuário
+    $sql_receitas = "SELECT SUM(valor) as total_receitas FROM receitas WHERE id_utilizador = ?";
+    $stmt_receitas = $conn->prepare($sql_receitas);
+    $stmt_receitas->bind_param("i", $user_id);
+    $stmt_receitas->execute();
+    $result_receitas = $stmt_receitas->get_result();
     
-    // Calcular percentual do orçamento usado
+    $total_receitas = 0;
+    if ($result_receitas->num_rows > 0) {
+        $row_receitas = $result_receitas->fetch_assoc();
+        $total_receitas = $row_receitas['total_receitas'] ?: 0;
+    }
+    
+    // Calcular saldo disponível (salário + receitas extras - despesas)
+    $salario = $user['salario'] ?: 0;
+    $saldo_disponivel = ($salario + $total_receitas) - $total_despesas;
+    
+    // Calcular percentual do orçamento usado (baseado apenas no salário)
     $percentual_orcamento = $salario > 0 ? ($total_despesas / $salario) * 100 : 0;
     $percentual_orcamento = min(100, max(0, $percentual_orcamento));
     
@@ -57,6 +70,7 @@ if ($result_user->num_rows > 0) {
 
 $stmt_user->close();
 if (isset($stmt_despesas)) $stmt_despesas->close();
+if (isset($stmt_receitas)) $stmt_receitas->close();
 ?>
 
 <!-- Header Principal -->
@@ -91,9 +105,9 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="historico.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'historico.php') ? 'active' : ''; ?>">
-                        <i class="fas fa-history"></i>
-                        <span>Histórico</span>
+                    <a href="receitas.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'receitas.php') ? 'active' : ''; ?>">
+                        <i class="fas fa-coins"></i>
+                        <span>Receitas</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -161,6 +175,10 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
 
                     <a href="importar_extrato.php" class="dropdown-item importar">
                         <i class="fas fa-file-import"></i> Importar Extrato
+                    </a>
+
+                    <a href="historico.php" class="dropdown-item importar">
+                        <i class="fas fa-history"></i> Historico
                     </a>
 
                     <div class="dropdown-divider"></div>
