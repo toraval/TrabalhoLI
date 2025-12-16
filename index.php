@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Manage - Dashboard</title>
+    <title>Financial Manager - Dashboard</title>
     <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/index.css">

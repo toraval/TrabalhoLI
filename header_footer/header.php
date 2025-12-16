@@ -66,10 +66,10 @@ if (isset($stmt_despesas)) $stmt_despesas->close();
         <div class="logo-section">
             <div class="logo">
                 <!--<i class="fas fa-chart-line"></i>-->
-                <img src="img/logo.png" alt="FinanceManager Logo" class="logo-img">
+                <img src="img/logo.png" alt="FinancialManager Logo" class="logo-img">
 
                 <div class="logo-text">
-                    <h1>Finance<span>Manager</span></h1>
+                    <h1>Financial<span>Manager</span></h1>
                     <p class="tagline">Gestão financeira pessoal</p>
                 </div>
             </div>
