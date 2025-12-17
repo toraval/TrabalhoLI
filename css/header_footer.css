@@ -136,12 +136,13 @@ body {
 }
 
 .logo-img {
-    width: 40px;
-    height: auto;
-    max-height: 40px;         
-    object-fit: contain;   
-    display: block;        
+  width: 70px;        /* aumente aqui */
+  height: auto;       /* mantém proporção */
+  max-height: 70px;   /* opcional: acompanha o width */
+  object-fit: contain;
+  display: block;
 }
+
 
 .logo-img:hover {
     opacity: 0.9;

@@ -184,7 +184,7 @@ $saldo_disponivel = ($salario + $total_receitas) - $total_despesas;
                         </div>
                         
                         <div class="form-group">
-                            <label for="data_recebimento"><i class="fas fa-calendar-alt"></i> Data de Recebimento *</label>
+                            <label for="data_recebimento"><i class="fas fa-calendar-alt"></i> Data de Receção *</label>
                             <input type="date" id="data_recebimento" name="data_recebimento" required 
                                    value="<?php echo date('Y-m-d'); ?>">
                         </div>

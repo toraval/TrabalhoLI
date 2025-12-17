@@ -130,9 +130,13 @@ $percentual_orcamento = min(100, max(0, $percentual_orcamento));
                     <ul>
                         <li><i class="fas fa-check-circle"></i> <strong>Dashboard:</strong> Visão geral das suas finanças</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Despesas:</strong> Gerencie suas despesas mensais</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Histórico:</strong> Consulte seu histórico financeiro</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Receitas:</strong> Acrescente suas outras receitas</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Orçamento:</strong> Planeje seu orçamento mensal</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Recomendações:</strong> Receba dicas personalizadas</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Histórico:</strong> Consulte seu histórico financeiro</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Status:</strong> Consulte com graficos de seus gastos e ganhos</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Importar Extrato:</strong> Importe seu extrato bancario</li>
+
                     </ul>
                 </div>
                 

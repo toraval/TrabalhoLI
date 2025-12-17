@@ -73,13 +73,7 @@ if ($erro === "email_existente") {
           </div>
 
           <!-- Mantém o name="tipo_util" para o PHP continuar igual -->
-          <div class="field field--select">
-            <select name="tipo_util" required aria-label="Tipo de utilizador">
-              <option value="" selected disabled>Tipo de utilizador</option>
-              <option value="0">Utilizador</option>
-              <option value="1">Administrador</option>
-            </select>
-          </div>
+          
 
           <button id="btnSubmit" type="submit" class="btn-login">Continuar</button>
 

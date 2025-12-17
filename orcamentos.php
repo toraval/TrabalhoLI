@@ -4,7 +4,7 @@ session_start();
 
 // Verificar se o utilizador está autenticado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: indexv1.html');
+    header('Location: main/indexv1.html');
     exit();
 }
 
@@ -241,9 +241,9 @@ $orcamento_disponivel = $total_orcamentado - $total_gasto;
                     </div>
 
                     <div class="form-group">
-                        <label for="percentagem_alerta"><i class="fas fa-bell"></i> Alerta em %</label>
+                        <label for="percentagem_alerta"><i class="fas fa-bell"></i> Alerta (%)</label>
                         <input type="number" name="percentagem_alerta" id="percentagem_alerta" step="5" min="0" max="100" value="80">
-                        <small>Você será alertado quando atingir este % do limite</small>
+                        <small>Você será alertado quando atingir esta % de limite</small>
                     </div>
                 </div>
 
@@ -360,11 +360,6 @@ $orcamento_disponivel = $total_orcamentado - $total_gasto;
                     <i class="fas fa-shield-alt"></i>
                     <h4>Reserve para Emergências</h4>
                     <p>Mantenha um fundo de emergência equivalente a 3-6 meses de despesas.</p>
-                </div>
-                <div class="tip-card">
-                    <i class="fas fa-target"></i>
-                    <h4>Defina Metas Realistas</h4>
-                    <p>Use os alertas para evitar gastos desnecessários e atingir suas metas.</p>
                 </div>
             </div>
         </div>
