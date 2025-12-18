@@ -129,13 +129,13 @@ $percentual_orcamento = min(100, max(0, $percentual_orcamento));
                     <h3><i class="fas fa-rocket"></i> Funcionalidades Disponíveis</h3>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> <strong>Dashboard:</strong> Visão geral das suas finanças</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Despesas:</strong> Gerencie suas despesas mensais</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Receitas:</strong> Acrescente suas outras receitas</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Orçamento:</strong> Planeje seu orçamento mensal</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Despesas:</strong> Gerencie as suas despesas mensais</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Receitas:</strong> Acrescente as suas outras receitas</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Orçamento:</strong> Planeje o seu orçamento mensal</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Recomendações:</strong> Receba dicas personalizadas</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Histórico:</strong> Consulte seu histórico financeiro</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Status:</strong> Consulte com graficos de seus gastos e ganhos</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Importar Extrato:</strong> Importe seu extrato bancario</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Histórico:</strong> Consulte o seu histórico financeiro</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Status:</strong> Consulte com gráficos de seus gastos e ganhos</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Importar Extrato:</strong> Importe o seu extrato bancario</li>
 
                     </ul>
                 </div>
@@ -143,7 +143,7 @@ $percentual_orcamento = min(100, max(0, $percentual_orcamento));
                 <div class="next-steps">
                     <h3><i class="fas fa-arrow-right"></i> Próximos Passos</h3>
                     <p>Utilize o menu de navegação acima para acessar as diferentes funcionalidades do sistema.</p>
-                    <p>Comece por adicionar suas despesas para ter um controle mais preciso das suas finanças.</p>
+                    <p>Comece por adicionar as suas despesas para ter um controle mais preciso das suas finanças.</p>
                 </div>
             </div>
         </div>
